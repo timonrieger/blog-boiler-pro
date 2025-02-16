@@ -1,0 +1,73 @@
+{% extends "layout.html" %} 
+
+{% block title %}
+  Filtered by {{ type }} &#124; {{ BLOG_TITLE }}
+{%endblock %}
+
+{% block description %}
+  {{ BLOG_DESCRIPTION }}
+{%endblock %} 
+
+{% block content %}
+<header
+  class="masthead"
+  style="background-image: url('../static/assets/img/home-bg.jpg')"
+>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1>{{ BLOG_TITLE }}</h1>
+          <span class="subheading"
+            >{{ BLOG_DESCRIPTION }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-3">
+      <h3>Tags</h3>
+      <ul>
+        {% for tag, count in tags %}
+          <li>
+              <a href="{{ url_for('home', tag=tag) }}"
+              >{{ tag }} ({{ count }})</a
+            > 
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-3">
+      <h3>Years</h3>
+      <ul>
+        {% for year, count in years %}
+          <li>
+              <a href="{{ url_for('home', year=year) }}"
+              >{{ year }} ({{ count }})</a
+            > 
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-3">
+      <h3>Authors</h3>
+      <ul>
+        <ul>
+          {% for author, count in authors %}
+            <li>
+              <a href="{{ url_for('home', author=author) }}">
+                {{ author }} ({{ count }})
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
