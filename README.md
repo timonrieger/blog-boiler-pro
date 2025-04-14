@@ -1,7 +1,7 @@
 <h2 align="center">Blog Boiler Pro</h2>
 <p align="center">A lightweight Flask-based boilerplate for creating an advanced blog with database storage.</p>
 <p align="center">
-<img src="https://img.shields.io/badge/status-under%20development-blue"/>
+<img src="https://img.shields.io/badge/status-no%20further%20development-blue"/>
 <img src="https://img.shields.io/github/license/timonrieger/blog-boiler-pro
 ">
 <img src="https://img.shields.io/github/last-commit/timonrieger/blog-boiler-pro
@@ -213,10 +213,7 @@ If you'd like to help translate, follow these steps:
    ```bash
    cd /path/to/project
 
-Navigate to the project root.
-
 ### Get all languages available
->Note: may be not fully translated
 ```bash
 find translations -mindepth 1 -maxdepth 1 -type d
 ```
@@ -241,7 +238,7 @@ pybabel update -i translations/messages.pot -d translations
 We have to translate manually, but you can start out with [Deepl in VSCode](https://marketplace.visualstudio.com/items?itemName=soerenuhrbach.vscode-deepl). We use common not highly formal language.
 
 Fill the `msgstr ""` in the `LANG_LOCAL/LC_MESSAGES/messages.po` with the translation. Check existing languages if you're lost.
-`⌘F` and search for the term fuzzy and delete it ([docs](https://python-babel.github.io/flask-babel/#translating-applications)).
+`⌘F` and search for the term `fuzzy` and delete it ([docs](https://python-babel.github.io/flask-babel/#translating-applications)).
 
 ### Compile the language
 Compiles all languages for usage.
